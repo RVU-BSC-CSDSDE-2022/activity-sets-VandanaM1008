@@ -1,31 +1,38 @@
-#include <stdio.h>
-
-int input();
+#include<stdio.h>
+ 
+ int input();
 int compare(int a, int b, int c);
 void output(int a, int b, int c, int largest);
-
-int main()
-{
- input(); 
-  
-}
-int input()
-{
-  int a,b,c;
-  printf("enter the value");
-  scanf("%d %d %d",&a ,&b ,&c);
-  compare(a,b,c);  
-}
-int compare(int a, int b, int c)
-{
- if (a >= b && a >= c)
-   printf("biggest number is %d",a);
-  else if(b >= a && b >= c)
-    printf("biggest number is %d",b);
-  else
-    printf("biggest number is %d",c);
-}
-void output(int a,int b,int c,int largest)
-{
-  printf("the largest of %d,%d,%d is %d\n",a,b,c,largest);
-}
+ 
+ int main()
+ {
+   int a, b, c,largest;
+  a = input();
+  b = input();
+  c = input();
+  largest = compare(a, b, c);
+  output(a,b,c,largest);
+  return 0;
+ }
+ int input()
+ {
+     int a;
+     printf("enter the three numbers");
+     scanf("%d",&a);
+     return a;
+ }
+ int compare(int a, int b, int c)
+ {
+     int largest;
+     if(a>=b && a>=c)
+     largest=a;
+     if(b>=a && b>= c)
+     largest=b;
+     else largest=c;
+     return largest;
+ }    
+ void output(int a, int b, int c, int largest)
+ {
+      printf("the largest of %d,%d,%d is %d\n",a,b,c,largest);
+ }
+ 
